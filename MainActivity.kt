@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         val pattern = "[^A-Za-z]".toRegex()
 
         val isInvalidUserName = pattern.containsMatchIn(username)
-        if (isInvalidUserName)
+        if (isInvalidUserName || username.length == 0)
             Toast.makeText(applicationContext, "Enter only alphabets username", Toast.LENGTH_SHORT).show()
 
         val pin = binding.pin.text.toString()
